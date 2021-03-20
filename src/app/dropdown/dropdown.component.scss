@@ -1,0 +1,65 @@
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    // margin-top: 5%;
+    height: 50%;
+    .inputContainer {
+        position: relative;
+        label {
+            cursor: pointer;
+            transition: .3s;
+            position: absolute;
+            color: rgba(128, 128, 128, .8);
+            font-size: 1.2rem;
+            bottom: .2rem;
+        }
+        .labelClicked {
+            color: #3f51b5;
+            font-size: .9rem;
+            bottom: 1.5rem;
+        }
+        .hasDefaultValue {
+            color: #3f51b5;
+            bottom: 1.5rem;
+        }
+        .inputAfterOptionSelected {
+            border-bottom-color: #3f51b5;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        .inputAfterClicked {
+            border-bottom-color: #3f51b5;
+        }
+        input {
+            border: none;
+            border-bottom-width: .1rem;
+            border-bottom-style: solid;
+            border-bottom-color: #00000029;
+            outline: none;
+            cursor: pointer;
+            width: 20rem;
+        }
+    }
+    .dropdownContainer {
+        width: 20rem;
+        visibility: hidden;
+        ul {
+            list-style: none;
+            margin: 0;
+            padding-left: 0;
+            box-shadow: 0px 3px 6px #00000029;
+            li {
+                height: 3rem;
+                line-height: 3;
+                padding-left: 1rem;
+                &:hover {
+                    background-color: rgba(0, 0, 0, .1);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<form action="" [formGroup]="myform">
+    <div class="inputContainer">
+        <label for="txtInput" [ngClass]="{ labelClicked: inputClicked||optionSelected,hasDefaultValue:hasDefultValue }">
+      {{ dropdownLabel }}
+    </label>
+        <input type="text" autocomplete="off" [formControl]="mycontrol" id="txtInput" (input)="onInput()" (click)="inputClick()" [ngClass]="{
+        inputAfterOptionSelected: optionSelected,
+        inputAfterClicked: inputClicked
+      }" />
+    </div>
+    <div class="dropdownContainer" [ngStyle]="{ visibility: inputClicked ? 'visible' : 'hidden' }" (mouseover)="inputClicked = true" (mouseout)="inputClicked = false">
+        <ul>
+            <li *ngFor="let option of options" (click)="onDropdownItemSelect(option)">
+                {{ option }}
+            </li>
+        </ul>
+    </div>
+</form>

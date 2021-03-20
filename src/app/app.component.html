@@ -1,0 +1,21 @@
+<form action="" [formGroup]='myform'>
+    <!-- First dropdown Component With @input() and controlValueAccessor and autoCompelete your results-->
+    <!-- you can set default value =====>  defaultValue='ismailia'  -->
+    <app-dropdown [formControl]="dropdownControl" dropdownLabel='Country ' [options]="options"></app-dropdown>
+
+
+
+    <!-- Second Component With ng content with controlValue accessor -->
+    <app-dropdow-ng-content [formControl]="dropdownNgContentControl">
+        <ng-container class="header">
+            <button class="dropbtn">{{dropdownTitle}}</button>
+        </ng-container>
+        <ng-container class="body">
+            <ul>
+                <li *ngFor="let option of options" value="option">
+                    {{ option }}
+                </li>
+            </ul>
+        </ng-container>
+    </app-dropdow-ng-content>
+</form>

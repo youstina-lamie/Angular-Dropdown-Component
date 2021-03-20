@@ -1,0 +1,6 @@
+<div class="dropdown" (click)='showDropdown=!showDropdown'>
+    <ng-content select=".header"></ng-content>
+    <div class="dropdown-content" [ngClass]="{'show':showDropdown}" (click)='selectedOption($event)'>
+        <ng-content select=".body"></ng-content>
+    </div>
+</div>
